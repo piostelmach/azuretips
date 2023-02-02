@@ -1,0 +1,3 @@
+az vmss extension set --vmss-name vmssname -g rgname -n VMAccessForLinux --publisher Microsoft.OSTCExtensions --version 1.4 --protected-settings "{\"username\":\"username\", \"ssh_key\":\"$(cat ~/.ssh/id_rsa.pub)\"}" 
+
+az vmss update-instances --instance-ids '*' -n vmssname -g rgname
